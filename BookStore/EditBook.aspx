@@ -27,6 +27,10 @@
                     alert(error);
                 }
             });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
             $.ajax({
                 url: 'EditBook.aspx/GetPublishers',
                 method: 'post',
@@ -42,6 +46,10 @@
                     alert(error);
                 }
             });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
             $.ajax({
                 url: 'EditBook.aspx/GetGenres',
                 method: 'post',
@@ -114,50 +122,61 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Default.aspx">List of books</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="AddNewBook.aspx">Add new book</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="EditBook.aspx">Edit book by Id</a>
-                    </li>
-                </ul>
+    <div class="container">
+        <main>
+            <div class="py-5 text-center">
+                <h1>Book Store</h1>
             </div>
-        </div>
-    </nav>
-    <form runat="server">
-        <div class="mb-3">        
-            <label for="inputId" class="form-label">Book ID</label>
-            <input id="txtId" type="text" class="form-control" />
-            <button id="btnGetBook" type="button">Get Book</button>
-        </div>
-        <div class="mb-3">        
-            <label for="inputName" class="form-label">Name</label>
-            <input id="txtName" type="text" class="form-control" />            
-        </div>
-        <div class="mb-3">        
-            <label for="selectAuthor" class="form-label">Author</label>
-            <select id="selectAuthors" class="form-select" />
-        </div>
-        <div class="mb-3">        
-            <label for="selectPublisher" class="form-label">Publisher</label>
-            <select id="selectPublishers" class="form-select" />
-        </div>
-        <div class="mb-3">        
-            <label for="inputPublicationYear" class="form-label">Publication year</label>
-            <input id="txtPublicationYear" type="text" class="form-control" />            
-        </div>
-        <div class="mb-3">        
-            <label for="selectGenre" class="form-label">Genre</label>
-            <select id="selectGenres" class="form-select" />
-        </div>
-        <button id="btnSaveChanges" type="button" class="btn btn-primary">Save changes</button>
-    </form>
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Default.aspx">List of books</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="AddNewBook.aspx">Add new book</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="EditBook.aspx">Edit book by Id</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div>
+                <div>
+                    <label for="txtId" class="form-label">Book ID</label>
+                    <div class="input-group">
+                        <input id="txtId" type="text" class="form-control" />
+                        <button type="submit" id="btnGetBook" class="btn btn-secondary">Get Book</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="txtName" class="form-label">Name</label>
+                    <input id="txtName" type="text" class="form-control" />
+                </div>
+                <div>
+                    <label for="selectAuthors" class="form-label">Author</label>
+                    <select id="selectAuthors" class="form-select"></select>
+                </div>
+                <div>
+                    <label for="selectPublishers" class="form-label">Publisher</label>
+                    <select id="selectPublishers" class="form-select"></select>
+                </div>
+                <div>
+                    <label for="txtPublicationYear" class="form-label">Publication year</label>
+                    <input id="txtPublicationYear" type="text" class="form-control" />
+                </div>
+                <div>
+                    <label for="selectGenres" class="form-label">Genre</label>
+                    <select id="selectGenres" class="form-select"></select>
+                </div>
+                <button id="btnSaveChanges" type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

@@ -5,17 +5,21 @@
     <div>
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource">
             <HeaderTemplate>
-            <table border="1">
-                <tr>
-                    <td><b>Name</b></td>
-                    <td><b>Author</b></td>
-                    <td><b>Publisher</b></td>
-                    <td><b>PublicationYear</b></td>
-                    <td><b>Genre</b></td>
-                </tr>
+            <table class="table">
+                <thead class="thread-light">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Publisher</th>
+                        <th scope="col">PublicationYear</th>
+                        <th scope="col">Genre</th>
+                    </tr>
+                </thead>
             </HeaderTemplate>
             <ItemTemplate>    
                 <tr>
+                    <td> <%# Eval("Id") %> </td>
                     <td> <%# Eval("Name") %> </td>
                     <td> <%# Eval("Author") %> </td>
                     <td> <%# Eval("Publisher") %> </td>
