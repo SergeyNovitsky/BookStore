@@ -30,6 +30,6 @@
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SelectGenres" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     </div>
     <p>
-        <asp:Button ID="SaveNewBookButton" runat="server" Text="Save" OnClick="SaveNewBookButton_Click" />
+        <asp:Button ID="SaveNewBookButton" class="btn btn-primary" runat="server" Text="Save" OnClick="SaveNewBookButton_Click" />
     </p>
 </asp:Content>

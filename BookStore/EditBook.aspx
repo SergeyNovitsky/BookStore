@@ -4,8 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Edit book</title>
-    <script src="Scripts/jquery-3.6.0.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <title>Edit book</title>    
     <script type="text/javascript">
         $(document).ready(function () {
             $.ajax({
@@ -110,33 +114,50 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        Book Id: 
-        <input id="txtId" type="text" />
-        <input id="btnGetBook" type="button" value="Get Book" />
-        <table>
-            <tr>
-                <td>Name:</td>
-                <td><input id="txtName" type="text" /></td>
-            </tr>
-            <tr>
-                <td>Author:</td>
-                <td><select name="Authors" id="selectAuthors"></select></td>
-            </tr>
-            <tr>
-                <td>Publisher:</td>
-                <td><select name="Publishers" id="selectPublishers"></select></td>
-            </tr>
-            <tr>
-                <td>Publication year:</td>
-                <td><input id="txtPublicationYear" type="text" /></td>
-            </tr>
-            <tr>
-                <td>Genre:</td>
-                <td><select name="Genre" id="selectGenres"></select></td>
-            </tr>
-        </table>
-        <input id="btnSaveChanges" type ="button" value="Save changes" />
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Default.aspx">List of books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AddNewBook.aspx">Add new book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="EditBook.aspx">Edit book by Id</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form runat="server">
+        <div class="mb-3">        
+            <label for="inputId" class="form-label">Book ID</label>
+            <input id="txtId" type="text" class="form-control" />
+            <button id="btnGetBook" type="button">Get Book</button>
+        </div>
+        <div class="mb-3">        
+            <label for="inputName" class="form-label">Name</label>
+            <input id="txtName" type="text" class="form-control" />            
+        </div>
+        <div class="mb-3">        
+            <label for="selectAuthor" class="form-label">Author</label>
+            <select id="selectAuthors" class="form-select" />
+        </div>
+        <div class="mb-3">        
+            <label for="selectPublisher" class="form-label">Publisher</label>
+            <select id="selectPublishers" class="form-select" />
+        </div>
+        <div class="mb-3">        
+            <label for="inputPublicationYear" class="form-label">Publication year</label>
+            <input id="txtPublicationYear" type="text" class="form-control" />            
+        </div>
+        <div class="mb-3">        
+            <label for="selectGenre" class="form-label">Genre</label>
+            <select id="selectGenres" class="form-select" />
+        </div>
+        <button id="btnSaveChanges" type="button" class="btn btn-primary">Save changes</button>
     </form>
 </body>
 </html>
